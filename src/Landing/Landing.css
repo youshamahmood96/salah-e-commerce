@@ -1,0 +1,26 @@
+.margin{
+    margin:60px 0px;
+}
+.landing-shop{
+    display:inline-block;
+    margin:60px; 
+}
+li{
+    list-style:none;
+    text-align:left;
+    margin:5px 0px;
+    cursor:pointer;
+}
+a{
+    color:black;
+}
+.main-div{
+    position: relative; 
+} 
+.sub-div { 
+    position: absolute; 
+    bottom: 0px; 
+}
+span{
+    text-align:right;
+}
