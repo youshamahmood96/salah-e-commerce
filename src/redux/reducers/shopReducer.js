@@ -1,16 +1,14 @@
 const basket = []
-let total;
 const basketTotalFunc = (basket) =>{
     let total = 0;
     basket.forEach(item =>{
         let itemTotal = item.price * item.quantity
         total = total +itemTotal
     })
-    console.log(total);
     return total.toFixed(2)
 }
 const shopReducer = ( state = basket,action ) =>{
-    total = basketTotalFunc(basket)
+    let total;
     switch(action.type){
         case 'ADD_TO_BASKET':
             let found = basket.find(element => element.key === action.payload.key);
@@ -21,6 +19,7 @@ const shopReducer = ( state = basket,action ) =>{
                 action.payload.quantity = 1
                 basket.push(action.payload)
             }
+            total = basketTotalFunc(basket)
           return {basket,total}
         case 'CHANGE_QUANTITY':
             basket.forEach(item=>{
@@ -33,9 +32,8 @@ const shopReducer = ( state = basket,action ) =>{
                     }
                 }
             })
+            total = basketTotalFunc(basket)
             return {basket,total}
-            case "GET_TOTAL":
-                return total
         default:
             return null
     }

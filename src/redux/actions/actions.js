@@ -10,8 +10,3 @@ export const changeQuantity = (content) =>{
         payload:content
     }
 }
-export const getTotal = () =>{
-    return{
-        type:'GET_TOTAL'
-    }
-}

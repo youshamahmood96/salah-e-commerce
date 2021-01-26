@@ -4,7 +4,6 @@ import '../Landing/Landing.css'
 import { Col, Container, Row } from "react-bootstrap";
 const Cart = () =>{
     const basket = useSelector(state=>state?state:null)
-    console.log(basket.total);
     return(
         <div>
         <h1 className="margin text-center">Shopping Cart</h1>
@@ -26,7 +25,7 @@ const Cart = () =>{
               <h4>SHIPPING<span> : $ 0</span></h4>
               <h4>TAXES<span> : $ 13</span></h4>
               <hr/> 
-              <p>TOTAL<span> : $ {basket.total?basket.total+13: null}</span></p>
+              <p>TOTAL<span> : $ {basket.total?parseInt(basket.total)+13: null}</span></p>
             </Col>
           </Row>
         </Container>
